@@ -1,22 +1,22 @@
-(function(){
+(function(context){
     var wallet;
-    function addOperation() {
+    context.addOperation = function (op) {
+        wallet.addOperation(op);
+    }
+    context.removeOperation = function (id) {
+        wallet.removeOperation(id);
+    }
+    context.findOperation = function() {
 
     }
-    function removeOperation() {
-
-    }
-    function findOperation() {
-
-    }
-    function getBalance() {
+    context.getBalance = function()  {
         return wallet.getBalance();
     }
-    function getOperations() {
+    context.getOperations = function() {
         return wallet.getOperations();
     }
 
     document.addEventListener('DOMContentLoaded', function() {
         wallet = new Wallet();
     });
-})();
+})(window);
